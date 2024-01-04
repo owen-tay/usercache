@@ -10,6 +10,9 @@ body {
 
 }
 
+.btn-primary {
+  color: #ffffff;
+}
 
 /* Custom Scrollbar Styling */
 ::-webkit-scrollbar {
