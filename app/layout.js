@@ -1,17 +1,22 @@
-import { Inter } from 'next/font/google'
-import './globals.css'
+import { Inter } from "next/font/google";
+import "./globals.css";
+import firebase_app from "./config";
+import { AuthContextProvider } from './AuthContext';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'UserCashe',
-  description: 'The admin and data management solution ',
-}
+  title: "UserCashe",
+  description: "The admin and data management solution ",
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        
+        <AuthContextProvider>{children}</AuthContextProvider>
+      </body>
     </html>
-  )
+  );
 }

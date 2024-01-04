@@ -1,17 +1,24 @@
 "use client"
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Sidebar from "../components/Sidebar";
-
-
+import { useAuthContext } from '../AuthContext';
+import { useRouter } from "next/navigation"; 
 
 const RootLayout = ({ children }) => {
+  const { user } = useAuthContext();
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(true);
+
+  useEffect(() => {
+    // Redirect to home page if not logged in
+    if (user == null) {
+      router.push("/");
+    }
+  }, [user, router]);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
-
   
 
   return (
