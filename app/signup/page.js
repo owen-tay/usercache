@@ -2,6 +2,7 @@
 import React from "react";
 import signUp from "../firebase/auth/signup";
 import { useRouter } from "next/navigation";
+;
 import Image from 'next/image';
 import Header from "../components/home/Header";
 import Footer from "../components/home/Footer";

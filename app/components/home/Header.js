@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useAuthContext } from "../../AuthContext";
 import { useRouter } from "next/navigation";
+;
 import { FaUser } from "react-icons/fa";
 
 

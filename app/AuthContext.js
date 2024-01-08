@@ -5,7 +5,8 @@ import { onAuthStateChanged, getAuth, signOut } from "firebase/auth";
 import firebase_app from "./config";
 const auth = getAuth(firebase_app);
 import Loading from "./components/home/Loading";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
+;
 
 export const AuthContext = React.createContext({});
 
