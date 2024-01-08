@@ -27,7 +27,7 @@ const features = [
 
 export default function Features() {
   return (
-    <div className="p-8">
+    <div className="p-8 mx-0 lg:mx-14">
       <h3 className="text-2xl font-bold text-center mb-16">Our Key Features</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
         {features.map((feature, index) => (
