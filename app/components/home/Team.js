@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAuthContext } from "../../AuthContext";
 import { useRouter } from "next/navigation";
+;
 import { db } from "../../config";
 import ErrorAlert from "./Error";
 
