@@ -5,6 +5,8 @@ import { db } from "../../config";
 import { doc, getDoc, collection, query, getDocs } from "firebase/firestore";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { RecordView } from "../../components/dashboard/RecordView"
 
 export default function Dashboard() {
   const { user } = useAuthContext();
