@@ -77,16 +77,15 @@ const RootLayout = ({ children }) => {
         >
           {team && <h1 className="ml-10 font-bold text-xl"> {team.name}</h1>}
         </div>
-
-        <main
-          className={` ${
-            isOpen ? " ml-64" : "ml-10"
-          } duration-300 ease-in-out `}
-        >
-          {React.Children.map(children, (child) =>
-            React.cloneElement(child, { teamId: team?.id })
-          )}
-        </main>
+          <main
+            className={` ${
+              isOpen ? " ml-64" : "ml-10"
+            } duration-300 ease-in-out `}
+          >
+            {React.Children.map(children, (child) =>
+              React.cloneElement(child, { teamId: team?.id })
+            )}
+          </main>
       </body>
     </html>
   );
