@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useAuthContext } from "../AuthContext"; 
-import { db } from "../config"; 
+import { useAuthContext } from "../AuthContext";
+import { db } from "../config";
 import { doc, getDoc, collection, query, getDocs } from "firebase/firestore";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,12 +15,11 @@ export default function Dashboard() {
   const [currentPage, setCurrentPage] = useState(1);
   const recordsPerPage = 10;
   const [selectedRecord, setSelectedRecord] = useState(null);
+  const [teamId, setTeamId] = useState(null);
 
   useEffect(() => {
     fetchRecords();
   }, [user]);
-
-  
 
   const fetchRecords = async () => {
     if (user) {
@@ -30,6 +29,7 @@ export default function Dashboard() {
         if (userDoc.exists()) {
           const userData = userDoc.data();
           if (userData.teams && userData.teams.length > 0) {
+            setTeamId(userData.teams[0]); // Set the teamId here
             const recordsQuery = query(
               collection(db, "teams", userData.teams[0], "records")
             );
@@ -95,9 +95,9 @@ export default function Dashboard() {
     <main className="p-4">
       {selectedRecord ? (
         <RecordView
-          record={selectedRecord} 
-          onBack={returnToDashboard} 
-          teamId={""} 
+          record={selectedRecord}
+          onBack={returnToDashboard}
+          teamId={teamId}
         />
       ) : (
         <div className="max-w-xl mx-auto">
@@ -150,7 +150,6 @@ export default function Dashboard() {
                     <span className="font-medium">Date of Birth:</span>{" "}
                     {record.dob}
                   </p>
-                  {/* Other info can be added here */}
                 </div>
                 <div className="flex justify-center mt-4">
                   <button
