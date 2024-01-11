@@ -12,7 +12,7 @@ const RootLayout = ({ children }) => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(true);
   const [isAddRecordOpen, setIsAddRecordOpen] = useState(false);
-  const [team, setTeam] = useState(null); // State for storing team info
+  const [team, setTeam] = useState(null); 
 
   useEffect(() => {
     if (user == null) {
@@ -33,8 +33,8 @@ const RootLayout = ({ children }) => {
           const teamDoc = await getDoc(teamDocRef);
           if (teamDoc.exists()) {
             setTeam({
-              id: teamDoc.id, // Get the document ID
-              ...teamDoc.data(), // Spread the rest of the team data
+              id: teamDoc.id, 
+              ...teamDoc.data(), 
             });
           }
         }

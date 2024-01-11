@@ -30,7 +30,7 @@ export const AuthContextProvider = ({ children }) => {
     console.log("TEEEST");
     try {
       await signOut(auth);
-      setUser(null); // Upddate user state to null
+      setUser(null); // 
       router.push("/"); 
     } catch (error) {
       console.error("Logout Error:", error);
