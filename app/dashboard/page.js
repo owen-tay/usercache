@@ -126,7 +126,7 @@ export default function Dashboard() {
                 className="bg-white shadow-lg rounded-lg flex flex-col overflow-hidden p-4 h-full"
               >
                 <div className="w-full text-center flex justify-center items-center mb-4">
-                  <img
+                  <Image
                     src="/profile.jpg"
                     className="rounded-full"
                     width={40}

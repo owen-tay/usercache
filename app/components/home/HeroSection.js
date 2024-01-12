@@ -6,7 +6,7 @@ export default function HeroSection() {
       <div className="h-96">
         <Image
           src="/hero.jpg"
-          alt="Descriptive Alt Text"
+          alt="hero image"
           className=" h-1/2"
           layout="fill"
           objectFit="cover"

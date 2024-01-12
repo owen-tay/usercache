@@ -19,7 +19,7 @@ export default function Header() {
     <header className="p-1">
       <nav className="flex items-center">
         <a className="flex items-center" href="/">
-        <img src="/LOGOblue.svg" width={30} height={30} alt="Logo" />
+        <Image src="/LOGOBlue.svg" width={30} height={30} alt="Logo" />
         <span className="text-sm md:text-md font-bold text-primary">Usercache</span></a>
         <div className="w-full flex justify-end">
           {user ? (
