@@ -17,7 +17,7 @@ const Sidebar = ({ isOpen, toggleSidebar, onAddRecordClick }) => {
       <nav>
         <Link href="/" className="flex  items-center justify-center">
           <div className="flex justify-items-center mt-4">
-            <Image
+            <img
               src="/logo.svg"
               width={40}
               height={40}
