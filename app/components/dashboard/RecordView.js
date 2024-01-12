@@ -77,7 +77,7 @@ function RecordView({ record, onBack, teamId }) {
 
       <div className="bg-white shadow-lg rounded-lg overflow-hidden p-4">
         <div className="w-full text-center flex justify-center items-center mb-4">
-          <Image
+          <img
             src="/images/profile.jpg"
             className="rounded-full"
             width={40}

@@ -6,7 +6,7 @@ export default function Review({ name, review, rating, imageUrl }) {
       <div className=" rounded-xl p-3">
         <div className="relative h-28 bg-gray-100 border shadow-xl max-w-lg  rounded-xl flex items-center gap-10 ">
           <div className="absolute -left-6 w-28 h-[7.4rem] rounded-full shadow-lg overflow-hidden">
-            <Image
+            <img
               src={imageUrl}
               alt={`Profile image of ${name}`}
               layout="fill" 
