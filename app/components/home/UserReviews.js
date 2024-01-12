@@ -1,10 +1,10 @@
 import Review from './Review'
 
 const reviews = [
-  { name: 'Alice Johnson', review: 'A game-changer for our admin team!!',  imageUrl: '/images/headshot1.png' },
-  { name: 'Bob Smith', review: 'Really streamlined my workflow.',  imageUrl: '/images/headshot2.png' },
-  { name: 'Dana White', review: 'Amazing features and easy to use.',  imageUrl: '/images/headshot3.png' },
-  { name: 'Dave Brown', review: 'Love the user interface!',  imageUrl: '/images/headshot4.png' },
+  { name: 'Alice Johnson', review: 'A game-changer for our admin team!!',  imageUrl: '/headshot1.png' },
+  { name: 'Bob Smith', review: 'Really streamlined my workflow.',  imageUrl: '/headshot2.png' },
+  { name: 'Dana White', review: 'Amazing features and easy to use.',  imageUrl: '/headshot3.png' },
+  { name: 'Dave Brown', review: 'Love the user interface!',  imageUrl: '/headshot4.png' },
 ]
 
 export default function UserReviews() {
