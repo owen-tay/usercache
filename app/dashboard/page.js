@@ -127,7 +127,7 @@ export default function Dashboard() {
               >
                 <div className="w-full text-center flex justify-center items-center mb-4">
                   <Image
-                    src="/images/profile.jpg"
+                    src="/profile.jpg"
                     className="rounded-full"
                     width={40}
                     height={40}
