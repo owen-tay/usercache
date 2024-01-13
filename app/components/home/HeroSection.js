@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+
 
 export default function HeroSection() {
   return (
@@ -23,8 +25,9 @@ export default function HeroSection() {
           intuitive ease-of-use features, it enables your team to work more
           efficiently.
         </p>
-
-        <button className="btn btn-primary">Find out more</button>
+        <Link href="signup">
+        <button  className="btn btn-primary" >Sign Up Now</button>
+        </Link>
       </div>
     </div>
   );

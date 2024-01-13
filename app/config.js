@@ -1,5 +1,7 @@
 import { initializeApp, getApps } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage"; 
+import { arrayUnion, arrayRemove } from "firebase/firestore";
 
 
 const firebaseConfig = {
@@ -14,10 +16,9 @@ const firebaseConfig = {
 
 let firebase_app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 
-
-
 const db = getFirestore(firebase_app);
+const storage = getStorage(firebase_app); 
 
-export { db };
+export { db, storage }; 
 
 export default firebase_app;
