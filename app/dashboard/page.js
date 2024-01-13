@@ -4,7 +4,6 @@ import { useAuthContext } from "../AuthContext";
 import { db } from "../config";
 import { doc, getDoc, collection, query, getDocs } from "firebase/firestore";
 import Image from "next/image";
-import Link from "next/link";
 import RecordView from "../components/dashboard/RecordView";
 
 export default function Dashboard() {
@@ -16,6 +15,7 @@ export default function Dashboard() {
   const recordsPerPage = 10;
   const [selectedRecord, setSelectedRecord] = useState(null);
   const [teamId, setTeamId] = useState(null);
+  const [isUserPending, setIsUserPending] = useState(false);
 
   useEffect(() => {
     fetchRecords();
@@ -29,17 +29,22 @@ export default function Dashboard() {
         if (userDoc.exists()) {
           const userData = userDoc.data();
           if (userData.teams && userData.teams.length > 0) {
-            setTeamId(userData.teams[0]); // Set the teamId here
-            const recordsQuery = query(
-              collection(db, "teams", userData.teams[0], "records")
-            );
-            const querySnapshot = await getDocs(recordsQuery);
-            const records = querySnapshot.docs.map((doc) => ({
-              id: doc.id,
-              ...doc.data(),
-            }));
-            setTeamRecords(records);
-            setSearchResults(records);
+            setTeamId(userData.teams[0]);
+
+            if (userData.pending) {
+              setIsUserPending(true);
+            } else {
+              const recordsQuery = query(
+                collection(db, "teams", userData.teams[0], "records")
+              );
+              const querySnapshot = await getDocs(recordsQuery);
+              const records = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+              }));
+              setTeamRecords(records);
+              setSearchResults(records);
+            }
           }
         }
       } catch (error) {
@@ -93,7 +98,13 @@ export default function Dashboard() {
 
   return (
     <main className="p-4">
-      {selectedRecord ? (
+      {isUserPending ? (
+        <div className="max-w-xl mx-auto">
+          <div className="text-2xl font-semibold mb-4 text-center">
+            You are pending approval to access records. Please wait for approval.
+          </div>
+        </div>
+      ) : selectedRecord ? (
         <RecordView
           record={selectedRecord}
           onBack={returnToDashboard}
